@@ -3394,7 +3394,10 @@ struct flametongue_t : public shaman_spell_t
   {
     base_multiplier *= 1.0 + player -> artifact.weapons_of_the_elements.percent();
 
-    add_child( player -> flametongue );
+    if ( player -> flametongue )
+    {
+      add_child( player -> flametongue );
+    }
   }
 
   void execute() override
