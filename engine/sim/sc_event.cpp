@@ -100,7 +100,6 @@ event_manager_t::event_manager_t( sim_t* s )
     wheel_size( 0 ),
     wheel_mask( 0 ),
     wheel_shift( 5 ),
-    wheel_granularity( 0.0 ),
     wheel_time( timespan_t::zero() ),
     event_stopwatch( STOPWATCH_THREAD ),
 #ifdef EVENT_QUEUE_DEBUG
@@ -380,8 +379,8 @@ void event_manager_t::init()
   // This makes wheel_size = 32K and it's fully used.
   if ( wheel_seconds < 1024 )
     wheel_seconds = 1024;  // 2^10 Min to ensure limited wrap-around
-  if ( wheel_granularity <= 0 )
-    wheel_granularity = 32;  // 2^5 Time slices per second
+  if ( wheel_shift <= 0 )
+    wheel_shift = 5;  // 2^5 Time slices per second
 
   wheel_time = timespan_t::from_seconds( wheel_seconds );
 

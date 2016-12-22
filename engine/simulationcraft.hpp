@@ -1433,7 +1433,6 @@ struct event_manager_t
   std::vector<event_t*> timing_wheel;
   event_t* recycled_event_list;
   int    wheel_seconds, wheel_size, wheel_mask, wheel_shift;
-  double wheel_granularity;
   timespan_t wheel_time;
   std::vector<event_t*> allocated_events;
 

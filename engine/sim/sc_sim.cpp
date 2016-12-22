@@ -3058,7 +3058,6 @@ void sim_t::create_options()
   add_option( opt_list( "party", party_encoding ) );
   add_option( opt_func( "active", parse_active ) );
   add_option( opt_uint64( "seed", seed ) );
-  add_option( opt_float( "wheel_granularity", event_mgr.wheel_granularity ) );
   add_option( opt_int( "wheel_seconds", event_mgr.wheel_seconds ) );
   add_option( opt_int( "wheel_shift", event_mgr.wheel_shift ) );
   add_option( opt_string( "reference_player", reference_player_str ) );
