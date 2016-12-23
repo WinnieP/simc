@@ -2568,6 +2568,7 @@ bool sim_t::iterate()
 
   reset();
 
+  util::fprintf(stdout, "whuang(%d): %d %d\n", thread_index, iterations, current_iteration);
   iterations = current_iteration + 1;
 
   return iterations > 0;
